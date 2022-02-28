@@ -31,16 +31,12 @@ class Service {
   };
 
   begin = () => {
-    console.log('BEGIN');
     this.store.push({ ...this.store[this.indexRollback] });
     this.indexRollback += 1;
-    console.log('indexRollback', this.indexRollback);
     return this;
   };
 
   commit = () => {
-    console.log('COMMIT', this.indexRollback, this.indexCommit);
-
     this.store[this.indexCommit] = this.store[this.indexRollback];
     this.store.splice(this.indexCommit + 1);
 
@@ -49,7 +45,6 @@ class Service {
   };
 
   rollback = () => {
-    console.log('ROLLBACK');
     if (this.indexRollback <= this.indexCommit) return;
     this.store.splice(this.indexRollback);
     this.indexRollback -= 1;

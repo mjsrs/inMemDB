@@ -1,15 +1,19 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Welcome to inMemBD
 
-This project has been created using **webpack-cli**, you can now run
-
-```
-npm run build
-```
-
-or
+Install packages
 
 ```
-yarn build
+npm install
 ```
 
-to bundle your application
+Build
+
+```
+npm run build:dev
+```
+
+Run the database server
+
+```
+npm run server
+```
